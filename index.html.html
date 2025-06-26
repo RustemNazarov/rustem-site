@@ -9,18 +9,33 @@
             --primary: #2c3e50;
             --secondary: #7f8c8d;
             --accent: #3498db;
+            --light-bg: #f9f9f9;
         }
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
+            background-color: var(--light-bg);
+        }
+        .profile-container {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         header {
-            text-align: center;
-            margin-bottom: 3rem;
+            flex: 1;
         }
         h1 {
             font-size: 2.5rem;
@@ -30,41 +45,63 @@
         .subtitle {
             font-size: 1.2rem;
             color: var(--secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
         }
         .intro {
             font-size: 1.1rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+        }
+        .intro p {
+            margin-bottom: 1rem;
         }
         nav {
             display: flex;
             justify-content: center;
             gap: 2rem;
             margin-top: 3rem;
+            flex-wrap: wrap;
         }
         nav a {
             color: var(--accent);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 30px;
+            transition: all 0.3s;
         }
         nav a:hover {
-            color: var(--primary);
+            background-color: var(--accent);
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Rustem Nazarov</h1>
-        <div class="subtitle">Architect & Concept Visualist</div>
-    </header>
-
-    <main>
-        <section class="intro">
-            <p>I work at the intersection of architecture and visual storytelling — combining design expertise with a sharp eye for composition, clarity, and expressive presentation.</p>
-            <p>This website is my professional introduction. Here you'll find my career path, selected architectural and visualization works, and my current focus on concept-driven design.</p>
-        </section>
-    </main>
+    <div class="profile-container">
+        <!-- Добавьте свою фотографию в папку с сайтом и укажите правильный путь -->
+        <img src="profile.jpg" alt="Rustem Nazarov" class="profile-image">
+        
+        <header>
+            <h1>Rustem Nazarov</h1>
+            <div class="subtitle">Architect & Concept Visualist</div>
+            
+            <div class="intro">
+                <p>I work at the intersection of architecture and visual storytelling — combining design expertise with a sharp eye for composition, clarity, and expressive presentation.</p>
+                <p>This website is my professional introduction. Here you'll find my career path, selected architectural and visualization works, and my current focus on concept-driven design.</p>
+            </div>
+        </header>
+    </div>
 
     <nav>
         <a href="about.html">Career Path</a>
