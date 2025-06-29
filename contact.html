@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Rustem Nazarov</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #7f8c8d;
+            --accent: #3498db;
+            --light-bg: #f9f9f9;
+            --border: #e1e1e1;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            background-color: var(--light-bg);
+        }
+        header {
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+        .contact-item strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .contact-form {
+            flex: 1;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0;
+        }
+        .nav-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            background
