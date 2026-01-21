@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Rustem Nazarov</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #7f8c8d;
+            --accent: #3498db;
+            --light-bg: #f9f9f9;
+            --border: #e1e1e1;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            background-color: var(--light-bg);
+        }
+        header {
+            margin: 3rem 0 2rem;
+            text-align: center;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+        .portfolio-item {
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .portfolio-title {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+        }
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--secondary);
+            flex-wrap: wrap;
+        }
+        .highlight-box {
+            background-color: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+        }
+        .section-title {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            padding-bottom: 0.3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+        .contribution-list {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+        }
+        .contribution-list li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .contribution-list li:before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0;
+        }
+        .nav-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        footer {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border);
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .project-stats {
+                grid-template-columns: 1fr;
+            }
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selected Work</h1>
+    </header>
+
+    <main>
+        <!-- Retail, Entertainment and Business Center project -->
+        <div class="portfolio-item">
+            <div class="portfolio-title">Retail, Entertainment and Business Center</div>
+            
+            <div class="project-meta">
+                <span><strong>Location:</strong> Tushinskaya Street, Pokrovskoye-Streshnevo District, Moscow (UNK)</span>
+                <span><strong>Role:</strong> Lead Architect</span>
+            </div>
+
+            <div class="section-title">Architectural Concept Development</div>
+            <ul class="contribution-list">
+                <li>Designed volumetric composition with distinct facade treatments for different functions</li>
+                <li>Developed suspended facade systems using high-quality materials</li>
+                <li>Implemented panoramic glazing with safety glass meeting impact-resistance standards</li>
+                <li>Created cohesive identity across diverse program elements</li>
+            </ul>
+
+            <div class="section-title">Functional Zoning</div>
+            <ul class="contribution-list">
+                <li>Organized complex into distinct functional zones with clear circulation</li>
+                <li>Designed seamless pedestrian flows between retail and entertainment areas</li>
+                <li>Created visual connections through strategic openings and atria</li>
+                <li>Integrated flexible business center spaces with shared amenities</li>
+            </ul>
+
+            <div class="section-title">Public Space Design</div>
+            <ul class="contribution-list">
+                <li>Designed multi-level public plaza with gathering spaces</li>
+                <li>Created signature canopy structures for weather protection</li>
+                <li>Implemented wayfinding and signage system</li>
+            </ul>
+
+            <div class="section-title">Technical Integration</div>
+            <ul class="contribution-list">
+                <li>Managed vertical transportation systems including escalators and elevators</li>
+                <li>Coordinated specialized MEP requirements for diverse functions</li>
+            </ul>
+
+            <div class="section-title">Regulatory Compliance</div>
+            <ul class="contribution-list">
+                <li>Ensured adherence to commercial building codes and safety regulations</li>
+                <li>Coordinated specialized technical requirements for public assembly spaces</li>
+                <li>Managed accessibility solutions throughout the complex</li>
+                <li>Prepared documentation for governmental approvals</li>
+            </ul>
+
+            <div class="project-stats">
+                <div class="stat-item">
+                    <div class="stat-value">Mixed-Use Commercial and Entertainment Complex</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Up to 32 + 3 Floors (above ground + underground parking)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">136.61 m Maximum Building Height</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Unitized curtain wall, Spandrel panels Facade Types with high-performance glazing</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- High-rise urban complexes project -->
+        <div class="portfolio-item">
+            <div class="portfolio-title">High-Rise Urban Complexes</div>
+            
+            <div class="project-meta">
+                <span><strong>Location:</strong> Bratyev Fonchenko Street, Moscow (APEX)</span>
+                <span><strong>Role:</strong> Lead Architect</span>
+            </div>
+
+            <div class="section-title">Concept Development</div>
+            <ul class="contribution-list">
+                <li>Developed architectural concept responding to urban context and zoning requirements</li>
+                <li>Created distinctive facade identity with modern materials and rhythmic patterns</li>
+                <li>Established material palette combining durability with aesthetic appeal</li>
+            </ul>
+
+            <div class="section-title">Functional Integration</div>
+            <ul class="contribution-list">
+                <li>Designed seamless integration of residential and commercial functions</li>
+                <li>Developed efficient circulation patterns for mixed-use spaces</li>
+                <li>Created visual connections through strategic openings and shared spaces</li>
+            </ul>
+
+            <div class="section-title">Façade Engineering</div>
+            <ul class="contribution-list">
+                <li>Developed modular unitized curtain wall system for efficiency</li>
+                <li>Integrated vertical shading elements with structural integrity</li>
+                <li>Coordinated complex interfaces between different facade systems</li>
+            </ul>
+
+            <div class="section-title">Parking Solutions</div>
+            <ul class="contribution-list">
+                <li>Designed multi-level underground parking with efficient circulation</li>
+                <li>Integrated smart parking guidance systems</li>
+                <li>Developed comprehensive access and security solutions</li>
+            </ul>
+
+            <div class="section-title">Technical Coordination</div>
+            <ul class="contribution-list">
+                <li>Led multi-disciplinary coordination across engineering teams</li>
+                <li>Developed integrated BIM model for clash detection</li>
+                <li>Implemented sustainable design principles throughout the complex</li>
+            </ul>
+
+            <div class="project-stats">
+                <div class="stat-item">
+                    <div class="stat-value">High-Rise Urban Complex Residential & Commercial</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Up to 40 + 3 Floors (above ground + underground)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">148.25 m Maximum Building Height</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Clinker tiles Concrete tiles, metal panels</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Residential apartment buildings project -->
+        <div class="portfolio-item">
+            <div class="portfolio-title">Residential Apartment Buildings</div>
+            
+            <div class="project-meta">
+                <span><strong>Location:</strong> Volokolamskoe Shosse, Moscow (APEX)</span>
+                <span><strong>Role:</strong> Lead Architect</span>
+            </div>
+
+            <div class="section-title">Architectural Concept & Integration</div>
+            <ul class="contribution-list">
+                <li>Developed volumetric composition with balanced proportions</li>
+                <li>Designed facade systems combining durability with residential warmth</li>
+                <li>Implemented energy-efficient glazing with safety features</li>
+                <li>Created "shell and core" delivery strategy for residential units</li>
+                <li>Integrated commercial spaces at ground level with residential above</li>
+            </ul>
+
+            <div class="section-title">Residential Planning</div>
+            <ul class="contribution-list">
+                <li>Optimized apartment layouts for daylight and views</li>
+                <li>Designed efficient core arrangements with vertical circulation</li>
+                <li>Created amenity spaces for resident use</li>
+                <li>Integrated flexible unit configurations</li>
+            </ul>
+
+            <div class="section-title">Safety Engineering</div>
+            <ul class="contribution-list">
+                <li>Engineered smoke-proof stairwells with pressurized ventilation</li>
+                <li>Implemented fire compartmentation with rated walls</li>
+                <li>Designed technical floors with fire resistance</li>
+                <li>Coordinated fire safety systems throughout</li>
+            </ul>
+
+            <div class="section-title">Parking & Services</div>
+            <ul class="contribution-list">
+                <li>Managed underground parking design with efficient layout</li>
+                <li>Directed MEP integration for residential comfort</li>
+                <li>Supervised structural interfaces between buildings and parking</li>
+                <li>Coordinated waste management systems</li>
+            </ul>
+
+            <div class="section-title">Urban Integration</div>
+            <ul class="contribution-list">
+                <li>Designed pedestrian-friendly ground level interfaces</li>
+                <li>Integrated landscape and public realm elements</li>
+                <li>Created transitions between public and private spaces</li>
+                <li>Ensured contextual massing and scale</li>
+            </ul>
+
+            <div class="project-stats">
+                <div class="stat-item">
+                    <div class="stat-value">Residential high-rise complex with commercial spaces and underground parking</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">109,365 m² Total Floor Area (Residential: 102,775 m²; Commercial: 6,590 m²)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">144.66 m Maximum Building Height</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Aluminum panel system Brick-like concrete panels, fiber-reinforced concrete, Glass façade</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="navigation">
+        <a href="index.html" class="nav-link">← Back to Home</a>
+        <a href="cv.html" class="nav-link">View CV →</a>
+    </div>
+
+    <footer>
+        &copy; 2024 Rustem Nazarov. All rights reserved.
+    </footer>
+</body>
+</html>
