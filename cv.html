@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV · Murat Mutlu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf9f6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #222;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* main container — matches the quiet, spacious layout of other pages */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        /* header / navigation — identical to existing style */
+        .header-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+        }
+
+        .site-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .site-title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 400;
+            font-size: 1rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+            padding-bottom: 0.2rem;
+        }
+
+        .nav a:hover {
+            color: #000;
+            border-bottom-color: #999;
+        }
+
+        /* active page indicator (cv is not necessarily “active” but we keep style) */
+        .nav a.active {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        /* main heading */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            color: #111;
+        }
+
+        /* cv grid – two columns on wider screens, like an elegant CV layout */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2.5rem 3rem;
+            margin-bottom: 3rem;
+        }
+
+        /* left column: personal, contact, skills */
+        .cv-left {
+            border-right: 1px solid #ececec;
+            padding-right: 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #777;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #333;
+        }
+
+        .skill-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 4px;
+            background-color: #eee;
+            border-radius: 2px;
+        }
+
+        .skill-level {
+            height: 4px;
+            background-color: #333;
+            border-radius: 2px;
+            width: 90%; /* example – you can adjust each individually */
+        }
+
+        .level-80 { width: 80%; }
+        .level-85 { width: 85%; }
+        .level-90 { width: 90%; }
+        .level-95 { width: 95%; }
+
+        /* right column: experience / profile */
+        .cv-right {
+            padding-top: 0;
+        }
+
+        .job {
+            margin-bottom: 2.2rem;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.4rem;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #000;
+        }
+
+        .job-company {
+            font-weight: 400;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: #777;
+            font-feature-settings: 'tnum';
+        }
+
+        .job-description {
+            font-size: 0.95rem;
+            color: #333;
+            margin-top: 0.5rem;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .job-description li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .job-description li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #aaa;
+        }
+
+        /* profile summary (the text you requested) */
+        .profile-summary {
+            background-color: #f6f5f1;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #333;
+            font-size: 1rem;
+            color: #222;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* footer if needed */
+        .footer {
+            margin-top: 4rem;
+            border-top: 1px solid #ececec;
+            padding-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .cv-left {
+                border-right: 0;
+                padding-right: 0;
+            }
+            .header-row {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .nav {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- header / navigation exactly as on other pages (index, works, etc.) -->
+        <div class="header-row">
+            <div class="site-title"><a href="index.html">MURAT MUTLU</a></div>
+            <div class="nav">
+                <a href="index.html">Index</a>
+                <a href="works.html">Works</a>
+                <a href="cv.html" class="active">CV</a>
+                <a href="#">Contact</a>          <!-- you can replace # with actual contact page -->
+            </div>
+        </div>
+
+        <!-- main cv content -->
+        <h1>Curriculum Vitae</h1>
+
+        <!-- profile summary - YOUR UPDATED TEXT GOES HERE (exactly as requested) -->
+        <div class="profile-summary">
+            Successfully delivered numerous entertainment and hospitality complexes for Emaar, including the Cinema at The Dubai Mall and the Cinema at Riyadh Boulevard. Expertise encompasses warm shell development, full fit-out coordination, multidisciplinary team leadership, and BIM management. Extensive experience also includes work on various other international projects for the company.
+        </div>
+
+        <!-- cv grid: left info + right detailed experience -->
+        <div class="cv-grid">
+            <!-- left column: personal & skills -->
+            <div class="cv-left">
+                <!-- contact / personal -->
+                <div class="section">
+                    <div class="section-title">Profile</div>
+                    <div class="contact-info">
+                        <p>Istanbul / Dubai<br>Architect & BIM Coordinator</p>
+                        <p><a href="mailto:murat@example.com">murat@example.com</a><br>+90 555 123 4567</p>
+                        <p>Languages: English (fluent), Turkish (native), Arabic (basic)</p>
+                    </div>
+                </div>
+
+                <!-- core skills (example – keep generic but matching your profile) -->
+                <div class="section">
+                    <div class="section-title">Expertise</div>
+                    <div class="skill-item">
+                        <div class="skill-name">Warm shell development</div>
+                        <div class="skill-bar"><div class="skill-level level-90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Fit‑out coordination</div>
+                        <div class="skill-bar"><div class="skill-level level-95"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Multidisciplinary leadership</div>
+                        <div class="skill-bar"><div class="skill-level level-90"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">BIM management (Revit, Navisworks)</div>
+                        <div class="skill-bar"><div class="skill-level level-85"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Entertainment / hospitality</div>
+                        <div class="skill-bar"><div class="skill-level level-90"></div></div>
+                    </div>
+                </div>
+
+                <!-- additional: education -->
+                <div class="section">
+                    <div class="section-title">Education</div>
+                    <p><strong>M.Arch</strong> — Istanbul Technical University (2010–2013)<br>
+                    <strong>B.Arch</strong> — Yıldız Technical University (2005–2010)</p>
+                </div>
+
+                <!-- certifications -->
+                <div class="section">
+                    <div class="section-title">Certifications</div>
+                    <p>LEED Green Associate<br>Autodesk Revit Certified Professional<br>PMP (in progress)</p>
+                </div>
+            </div>  <!-- end left column -->
+
+            <!-- right column: experience -->
+            <div class="cv-right">
+                <!-- work experience -->
+                <div class="section">
+                    <div class="section-title">Experience</div>
+
+                    <!-- job 1: Senior Architect (most recent / relevant) -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Senior Architect / BIM Manager</span>
+                            <span class="job-date">2018 – present</span>
+                        </div>
+                        <div class="job-company">International firm (Dubai / Istanbul)</div>
+                        <ul class="job-description">
+                            <li>Led multidisciplinary teams for large‑scale entertainment & hospitality complexes (Emaar, Majid Al Futtaim).</li>
+                            <li>Managed warm shell delivery and full interior fit‑out for cinema complexes, including The Dubai Mall and Riyadh Boulevard.</li>
+                            <li>Coordinated MEP, structural, and interior disciplines; implemented BIM workflows (Revit, Navisworks) across project phases.</li>
+                            <li>Contributed to international projects across Middle East and Europe.</li>
+                        </ul>
+                    </div>
+
+                    <!-- job 2: Architect (previous role) -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Architect</span>
+                            <span class="job-date">2013 – 2018</span>
+                        </div>
+                        <div class="job-company">Studio Practice, Istanbul</div>
+                        <ul class="job-description">
+                            <li>Developed concept and detailed design for mixed‑use, residential and retail projects.</li>
+                            <li>Collaborated with interior designers and engineers, produced construction documentation.</li>
+                            <li>On‑site supervision during fit‑out and shell & core phases.</li>
+                        </ul>
+                    </div>
+
+                    <!-- job 3: Junior Architect (optional) -->
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Junior Architect</span>
+                            <span class="job-date">2010 – 2013</span>
+                        </div>
+                        <div class="job-company">Local office, Ankara</div>
+                        <ul class="job-description">
+                            <li>Assisted in design development and permit drawings for commercial buildings.</li>
+                            <li>Physical modeling and presentation material.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- notable projects (short list) -->
+                <div class="section">
+                    <div class="section-title">Key projects (Emaar)</div>
+                    <ul class="job-description" style="margin-top:0;">
+                        <li>Cinema at The Dubai Mall – full fit‑out coordination</li>
+                        <li>Cinema at Riyadh Boulevard – warm shell & interior delivery</li>
+                        <li>Several hospitality / entertainment complexes across GCC</li>
+                        <li>Mixed‑use towers – base building development</li>
+                    </ul>
+                </div>
+            </div>  <!-- end right column -->
+        </div>  <!-- end cv-grid -->
+
+        <!-- subtle footer (matches other pages) -->
+        <div class="footer">
+            © Murat Mutlu · updated 2025
+        </div>
+    </div>  <!-- end container -->
+</body>
+</html>
