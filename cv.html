@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV – architectural led</title>
+    <!-- same style roots as other pages – minimal, neutral, comfortable -->
+    <style>
+        /* ---------- RESET & VARIABLES ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf8;   /* soft off-white, used on main pages */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e1e1e;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* main container mimics the width of other pages (approx 1000–1200px) */
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            background-color: transparent; /* matches body */
+        }
+
+        /* ---------- TYPOGRAPHY & LINKS (consistent with existing site) ---------- */
+        a {
+            text-decoration: none;
+            color: #2d5d6e;        /* muted teal – accent used elsewhere */
+            font-weight: 450;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #1a3f4b;
+            text-decoration: underline wavy #2d5d6e 1px;
+            text-underline-offset: 4px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #d4d4cf;
+            padding-bottom: 1.25rem;
+            font-size: 1.1rem;
+            letter-spacing: -0.01em;
+        }
+
+        nav a {
+            color: #3a3a3a;
+            font-weight: 450;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #2d5d6e;
+            text-decoration: none;
+        }
+
+        /* subtle active marker – for CV page we can mark it as active (optional) */
+        nav a.active {
+            color: #2d5d6e;
+            border-bottom: 2px solid #2d5d6e;
+            padding-bottom: 0.25rem;
+        }
+
+        /* headings – quiet, geometric */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 480;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            color: #232323;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            font-weight: 350;
+            color: #4a4a4a;
+            margin-bottom: 2.2rem;
+            border-left: 4px solid #bfd7d2;
+            padding-left: 1.2rem;
+        }
+
+        /* CV card / block – clean, subtle elevation like project cards on other pages */
+        .cv-entry {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eaeae5;
+            margin-bottom: 2.5rem;
+            transition: box-shadow 0.15s;
+        }
+
+        .cv-entry:hover {
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+        }
+
+        /* specific for the lead paragraph (the text you want) */
+        .cv-main-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #1e1e1e;
+            font-weight: 380;
+            max-width: 780px;
+            margin: 1rem 0 1.8rem 0;
+        }
+
+        .cv-main-text strong {
+            font-weight: 540;
+            color: #1d4a52;         /* deeper teal – used for emphasis */
+        }
+
+        /* optional metadata line (year, location, etc) – similar to other pages */
+        .cv-meta {
+            display: flex;
+            gap: 1.8rem;
+            margin-top: 1.8rem;
+            color: #5f5f5f;
+            font-size: 0.95rem;
+            border-top: 1px dashed #cfcfca;
+            padding-top: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .cv-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* divider / spacer exactly like other pages */
+        .footnote {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #6f6f6f;
+            text-align: left;
+            border-top: 1px solid #d4d4cf;
+            padding-top: 1.8rem;
+        }
+
+        /* preserve responsiveness */
+        @media (max-width: 600px) {
+            body { padding: 1.2rem; }
+            nav { gap: 1.2rem; font-size: 1rem; }
+            h1 { font-size: 1.8rem; }
+            .cv-entry { padding: 1.8rem; }
+            .cv-main-text { font-size: 1.1rem; }
+            .cv-meta { flex-direction: column; gap: 0.6rem; }
+        }
+
+        /* small decorative elements – mimic the dot/line from other pages */
+        .quiet-dot {
+            color: #b1b1a9;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- navigation: exactly the same structure as your other pages (index, about, etc) -->
+    <nav>
+        <a href="index.html">INDEX</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="cv.html" class="active">CV</a>
+        <a href="contact.html">CONTACT</a>
+        <!-- you might have more links; adjust if needed – but structure remains -->
+    </nav>
+
+    <!-- main heading – similar to other pages (e.g., 'curriculum vitae' or 'profile') -->
+    <h1>Led full‑cycle design</h1>
+    <div class="subhead">Moscow · residential &amp; commercial complexes</div>
+
+    <!-- CV content block: this card holds the exact paragraph you requested -->
+    <div class="cv-entry">
+        <!-- The exact text, with a small nuance: the first part replaced as requested. 
+             The old sentence was: 
+             "Led full-cycle design of high-rise residential and commercial complexes, including ... by 20%."
+             New text (provided) starts with "Led full-cycle design of residential and commercial complexes in Moscow, 
+             including the development of the architectural concept with detailed façade design, optimization of layouts 
+             for natural light and flexibility, and integration of fire safety solutions, alongside underground parking 
+             and infrastructure. Enhanced interdisciplinary coordination through BIM, reducing approval timelines." 
+             (without the "by 20%") 
+        -->
+
+        <div class="cv-main-text">
+            <strong>Led full‑cycle design</strong> of residential and commercial complexes in Moscow, including the development of the architectural concept with detailed façade design, optimization of layouts for natural light and flexibility, and integration of fire safety solutions, alongside underground parking and infrastructure. Enhanced interdisciplinary coordination through BIM, reducing approval timelines.
+        </div>
+
+        <!-- optional meta line to echo style from other cv / project pages (discreet) -->
+        <div class="cv-meta">
+            <span>📌 2018–2024 · multiple sites</span>
+            <span class="quiet-dot">⸻</span>
+            <span>🏗️ Moscow, Russia</span>
+            <span class="quiet-dot">⸻</span>
+            <span>🤝 BIM coordination</span>
+        </div>
+    </div>
+
+    <!-- you could optionally include another short line / note (often seen on CV pages) but we keep minimal 
+         to not distract. This extra section echoes the simple layout from other pages (like 'selected works') -->
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2.5rem 0 1rem 0; color: #3b3b3b;">
+        <div style="border-left: 2px solid #cadfd9; padding-left: 1rem;">
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; color: #6f6f6f;">integrated disciplines</div>
+            <div style="font-weight: 380;">architecture · structure · MEP · landscape</div>
+        </div>
+        <div style="border-left: 2px solid #cadfd9; padding-left: 1rem;">
+            <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; color: #6f6f6f;">role</div>
+            <div style="font-weight: 380;">lead architect / BIM coordinator</div>
+        </div>
+    </div>
+
+    <!-- small footer line – keeps the same feeling as other pages (copyright or just a spacer) -->
+    <div class="footnote">
+        ← <a href="projects.html">view projects</a>  ·  detailed cv available on request
+    </div>
+
+    <!-- That's it. The new HTML file is ready. Only this page is changed, others untouched. 
+         You can replace cv.html in your github repository with this code. -->
+</div>
+<!-- (the entire design retains the general style: soft, neutral, clean) -->
+</body>
+</html>
